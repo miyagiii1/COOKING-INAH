@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI winText;
+    public UnityEngine.UI.Image heart1;
+    public UnityEngine.UI.Image heart2;
+    public UnityEngine.UI.Image heart3;
+
+    public Sprite brokenHeartSprite;
 
     public GameObject restartButton;
 
@@ -44,10 +50,17 @@ public class GameManager : MonoBehaviour
 
         UpdateLivesUI();
 
-        Debug.Log("Lives: " + lives);
-
-        if (lives <= 0)
+        if (lives == 2)
         {
+            StartCoroutine(BreakHeart(heart3));
+        }
+        else if (lives == 1)
+        {
+            StartCoroutine(BreakHeart(heart2));
+        }
+        else if (lives <= 0)
+        {
+            StartCoroutine(BreakHeart(heart1));
             GameOver();
         }
     }
@@ -88,5 +101,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(
             SceneManager.GetActiveScene().buildIndex
         );
+    }
+    System.Collections.IEnumerator BreakHeart(UnityEngine.UI.Image heart)
+    {
+        heart.sprite = brokenHeartSprite;
+
+        yield return new WaitForSecondsRealtime(0.3f);
+
+        heart.gameObject.SetActive(false);
     }
 }

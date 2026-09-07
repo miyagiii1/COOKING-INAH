@@ -182,8 +182,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
   ingredientSprites:
   - {fileID: -4706206235554970847, guid: 8c791e3a1bb982447a9e6218a1774986, type: 3}
-  - {fileID: -7442052964665986110, guid: 4d42020c7c7ea914e8b14a21c2ae1ae1, type: 3}
-  - {fileID: -7442052964665986110, guid: 4d42020c7c7ea914e8b14a21c2ae1ae1, type: 3}
   - {fileID: -6062909257713236932, guid: 0c8bc443b2468544997442097ab0a385, type: 3}
   - {fileID: -1401074065636636209, guid: 0309acb413508f94396330ca752f6064, type: 3}
   - {fileID: -6853751142634556430, guid: 790a11c00e56c5b46b7157128cacecfd, type: 3}
